@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Picking a North Star metric that means money &middot; Preetam Priyabrat</title>
+<meta name="description" content="Which famous activation numbers survive checking, why the orthodoxy against revenue is weaker than it looks, and how to pick a metric a finance team would sign.">
+<meta name="theme-color" content="#0E120F">
+<meta property="og:title" content="Picking a North Star metric that means money">
+<meta property="og:description" content="Which famous activation numbers survive checking, why the orthodoxy against revenue is weaker than it looks, and how to pick a metric a finance team would sign.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161615'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='28' fill='%23EDEDE9'%3EPP%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{if(localStorage.getItem("pp-theme")==="light")document.documentElement.removeAttribute("data-theme");}catch(e){}</script>
+</head>
+<body>
+
+<header class="art-nav">
+  <div class="wrap">
+    <a class="art-back" href="../index.html#notes"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7H2M6 3L2 7l4 4"/></svg>All writing</a>
+    <a class="namemark" href="../index.html">Preetam Priyabrat</a>
+    <button class="nav-ico" id="themeBtn" type="button" aria-label="Switch to light mode" aria-pressed="true" title="Light mode">
+      <svg class="sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="3.6"/><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2M15.8 4.2l-1.4 1.4M5.6 14.4l-1.4 1.4M15.8 15.8l-1.4-1.4M5.6 5.6L4.2 4.2"/></svg>
+      <svg class="moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16.2 12.4A6.8 6.8 0 0 1 7.6 3.8a6.9 6.9 0 1 0 8.6 8.6z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="art">
+  <article class="art-wrap">
+<span class="art-k">Product</span>
+<h1>Picking a North Star metric that <em>means money</em></h1>
+<p class="art-sub">Half the famous activation numbers turn out to be folklore. Here is what survives checking, why the standard advice to keep revenue out of it is weaker than it sounds, and how I would choose one now.</p>
+<div class="art-meta">
+  <span><b>Preetam Priyabrat</b></span><i></i>
+  <span>October 2026</span><i></i>
+  <span>11 min read</span><i></i>
+  <span>All figures sourced below</span>
+</div>
+
+<div class="art-body">
+
+<p>I went looking for the source of "seven friends in ten days" because I had quoted it in a deck and somebody asked me where it came from. I could not answer. That turned into an afternoon, and the afternoon turned into this.</p>
+
+<p>The short version: a lot of what gets repeated about activation metrics has no primary source, the standard advice about keeping revenue out of your North Star does not match what practitioners actually do, and there is at least one Indian example that demolishes the whole engagement-as-leading-indicator argument more cleanly than anything in the Western canon.</p>
+
+<h2>Which of the famous numbers are real</h2>
+
+<p>I graded each one by whether I could trace it to a primary source. The results were not what I expected.</p>
+
+<h3>Slack's 2,000 messages: real</h3>
+
+<p>Stewart Butterfield said it on the record in First Round Review in February 2015: "any team that has exchanged 2,000 messages in its history has tried Slack, really tried it," and "after 2,000 messages, 93% of those customers are still using Slack today."<sup>1</sup> Founder-stated, dated, specific. This one holds up.</p>
+
+<p>The related claim that Slack's North Star is "messages sent by teams of three or more" has no traceable source at all. Lenny Rachitsky's survey of growth-stage companies lists Slack's North Star as paid teams.<sup>2</sup> The "teams of 3+" version appears to be a conflation of the activation threshold with a team-size input, repeated until it became fact.</p>
+
+<h3>Facebook's seven friends in ten days: semi-verified, and probably misread</h3>
+
+<p>It traces to Chamath Palihapitiya recounting it in talks years afterwards. No Facebook document, filing or data release confirms it.<sup>3</sup></p>
+
+<p>Two critiques are worth more than the number. Ben Newell pointed out that the whole thing assumes causation where the data only supports correlation, though he concedes the mechanism is plausible: seven friends generates enough newsfeed content to make the product work.<sup>4</sup> And Mixpanel, having surveyed the genre, put it bluntly: "it could have been '10 friends in 12 days' or even 'five friends in one day'." Their conclusion is that magic numbers are "memorable stories and mantras, not formulas."<sup>5</sup></p>
+
+<h3>Twitter's 30 follows: real, but the retelling inverted it</h3>
+
+<p>This one is the most interesting. The actual finding from Josh Elman's growth work was that users who visited at least seven times in a month were retained the following month at 90 to 100%. The 30 follows figure was a <em>downstream correlate</em>: those highly retained users happened to follow around 30 accounts.<sup>6</sup></p>
+
+<p>So the real threshold was a visit frequency, and the number that got remembered was a correlate of it. The popular version has the causal arrow pointing the wrong way, and everyone who built a "get users to 30 follows" onboarding flow was optimising a symptom.</p>
+
+<h3>Dropbox's one file in one folder on one device: no source</h3>
+
+<p>I looked specifically. No Drew Houston statement, no Dropbox post, no filing, no named talk. It propagates entirely through activation-metric listicles. I am not saying it is false. I am saying nobody has shown their working, and it has been quoted in thousands of decks including, until recently, one of mine.</p>
+
+<div class="note-box">
+<b>Why this matters beyond trivia</b>
+These numbers get used as proof that the method works. If three of the four canonical examples cannot be traced, the method is resting on a thinner evidence base than its popularity suggests. That does not make it wrong. It does mean you should derive your own number rather than borrowing someone else's.
+</div>
+
+<h2>The orthodoxy, and the hole in it</h2>
+
+<p>Amplitude's North Star Playbook is the canonical framework, and it explicitly rules out money. Revenue and ARPU are unsuitable "because they describe what already happened rather than predicting future performance."<sup>7</sup> The standard elaboration is that revenue is value <em>captured</em>, while a North Star should measure value <em>delivered</em>.</p>
+
+<p>Then there is the awkward fact buried in Lenny Rachitsky's own survey of more than forty growth-stage companies: about half of them use revenue as their North Star. It is the largest single category, ahead of every engagement category.<sup>2</sup></p>
+
+<p>So the consensus that revenue is disqualified is not what practitioners actually do. That is worth sitting with before adopting the framework.</p>
+
+<p>Brian Balfour's critique from 2018 is still the sharpest. He calls single-metric focus a "fatal oversimplification" and argues for a constellation: multiple output metrics across retention, engagement and monetisation, plus explicit tradeoff metrics so you can see what you broke.<sup>8</sup> His point about Pinterest's composite weekly-active-repinner metric producing "false rigor" applies to a lot of what I see: bundle engagement and money into one number and you lose the ability to tell which one moved.</p>
+
+<h2>Netflix changed its mind twice, in public</h2>
+
+<p>This is the cleanest documented migration anywhere, and it argues that the leading-versus-lagging distinction is about stage rather than principle.</p>
+
+<div class="pull">
+"In our early days, when we had little revenue or profit, membership growth was a strong indicator of our future potential. But now we're generating very substantial profit and free cash flow."
+<small>Netflix shareholder letter, April 2024, announcing it would stop reporting quarterly membership numbers from 2025.<sup>9</sup></small>
+</div>
+
+<p>They replaced subscribers with engagement, calling time spent watching their best proxy for satisfaction. Then in July 2026 they demoted engagement too, cutting the "What We Watched" reports from twice a year to annual, with the stated rationale of keeping focus on revenue and profit.<sup>10</sup></p>
+
+<p>The example they gave for why engagement misleads is excellent: live programming is about 1% of viewing hours and pulls in the most advertising dollars. An hour is not an hour.</p>
+
+<h2>Duolingo is the live version of the same problem</h2>
+
+<p>From their Q2 2026 shareholder letter, filed with the SEC:</p>
+
+<div class="art-table">
+<table>
+  <caption>Duolingo Q2 2026 against Q2 2025. The engagement metric is accelerating while bookings decelerate, in the same filing.</caption>
+  <thead><tr><th>Metric</th><th>Q2 2025</th><th>Q2 2026</th><th>YoY</th></tr></thead>
+  <tbody>
+    <tr><td>Daily active users</td><td class="num">47.7M</td><td class="num">58.7M</td><td class="num">+23%</td></tr>
+    <tr><td>Monthly active users</td><td class="num">128.3M</td><td class="num">140.6M</td><td class="num">+10%</td></tr>
+    <tr><td>Paid subscribers</td><td class="num">10.9M</td><td class="num">12.7M</td><td class="num">+17%</td></tr>
+    <tr><td>Total bookings</td><td class="num">$268.0M</td><td class="num">$289.1M</td><td class="num">+8%</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>DAU up 23%, bookings up 8%, and management reaffirmed DAU as the primary engagement indicator.<sup>11</sup> No metric change announced. The market, meanwhile, has repriced the stock sharply downward over the same period despite revenue growth.</p>
+
+<p>If your North Star is accelerating while the money decelerates, the North Star is answering a question nobody is asking any more.</p>
+
+<h2>What India shows that the Western examples do not</h2>
+
+<p>Three cases, and the last one is the strongest argument in this entire piece.</p>
+
+<h3>Eternal dropped GOV and said why</h3>
+
+<p>In the Q1 FY26 shareholders' letter: "Going forward, we will only be disclosing NOV (and will discontinue disclosing GOV), as we believe that NOV is a better measure of growth in our B2C businesses." The sharper version came a quarter later: "GOV is a misleading measure of growth and by reporting NOV, we want to present a truer picture."<sup>12,13</sup></p>
+
+<p>The named cause is that restaurants and brands fund escalating discounts, so gross order value "present[s] an inflated picture of growth, no longer fulfilling the true intent of the metric."</p>
+
+<p>That is Goodhart's law corrected in public, with the company naming the gaming vector. Worth noting what it is not: they moved from one volume metric to a less inflatable volume metric. The headline is still not profit. Meanwhile Swiggy, in the same category in the same quarters, still leads with GOV.<sup>14</sup> Same market, opposite disclosure philosophy.</p>
+
+<h3>Zerodha and Groww are the same business with opposite scoreboards</h3>
+
+<p>As of May 2026, Groww had about 13.1 million NSE active clients to Zerodha's 6.8 million, having overtaken them in September 2023. In FY25, Zerodha made ₹4,237 crore of net profit and Groww ₹1,824 crore.<sup>15</sup></p>
+
+<p>Twice the users, less than half the profit. Roughly ₹53,600 of profit per client against ₹14,100. Same regulator, same product, both charging zero equity brokerage. One monetises intensity, the other breadth.</p>
+
+<p>If either had picked active clients as their North Star, the scoreboard would read Groww 2, Zerodha 1. The P&amp;L reads the other way by a factor of 2.3.</p>
+
+<h3>Dream11 is the one that settles it</h3>
+
+<p>On 22 August 2025, India's Online Gaming Act banned real-money gaming. Dream11's revenue fell 95% overnight. They lost a ₹358 crore BCCI sponsorship. Dream Sports later split into eight independent startups and more than a hundred people left.<sup>16,17</sup></p>
+
+<p>They kept 250 million registered accounts. The app, the contests and the users survived intact.</p>
+
+<div class="pull">
+Any engagement North Star Dream11 could have chosen, DAU, contests entered, teams created, would have registered no change at all on the day the business lost 95% of its revenue.
+</div>
+
+<p>This is the part of the argument I had not understood before. Engagement metrics are blind to the monetisation layer by construction. The claim that engagement leads revenue is not a structural property of metrics. It is a contingent empirical claim about a causal chain, and that chain can be severed by regulation, by pricing, by a platform change, or by mix. When it breaks, your leading indicator leads nowhere.</p>
+
+<h2>What AI products did to the argument</h2>
+
+<p>There is a new reason the engagement North Star is breaking, and it is arithmetic rather than philosophy.</p>
+
+<p>Bessemer's AI pricing playbook puts AI company gross margins at 50 to 60% against 80 to 90% for classic SaaS, because inference is a real cost of goods line.<sup>18</sup> In traditional software, marginal usage is approximately free, so maximising it is approximately free. In an AI product, every additional unit of engagement costs money. Maximising usage without maximising monetisation now destroys gross margin directly.</p>
+
+<p>Which is why the pricing models that have emerged are outcome-shaped rather than usage-shaped. Intercom charges $0.99 per AI resolution. Cursor watches the percentage of generated code that gets accepted. Leena AI charges per ticket closed.<sup>18</sup> Each of those is a North Star and a price at the same time, which is the thing the orthodoxy said you should not do.</p>
+
+<h2>How I would choose one</h2>
+
+<p>I am not a product manager by training. I came at this from the other end, running a P&amp;L where the only metric anyone cared about was whether the money arrived. What follows is the test I would actually apply.</p>
+
+<ol>
+<li><strong>Pair it.</strong> Sri Batchu at Ramp pairs volume growth with payback period specifically to stop growth at any cost.<sup>19</sup> That is the most practical answer I found anywhere. One metric for value delivered, one for value captured, visible side by side so you cannot move one by wrecking the other.</li>
+<li><strong>Put a quality filter on it.</strong> Reforge's warning is the one I would print out: "when quality measures are either missing or defined too broadly, your North Star Metric can actually incentivize the wrong user action."<sup>20</sup> Not all actions create value. Blinkit's 2,443 dark stores do not make the company money if the orders are small and discounted; neither do your active users if they never convert.</li>
+<li><strong>Ask what it would do on Dream11 day.</strong> If regulation, a pricing change or a platform shift removed the monetisation layer, would your metric move? If not, you need a second one that would.</li>
+<li><strong>Derive your own number.</strong> Do not borrow seven friends or two thousand messages. Butterfield's number came from Slack's own retention curves. Yours has to come from yours, and if your base is small the honest answer is that you do not have one yet.</li>
+<li><strong>Revisit it at stage changes.</strong> Netflix's letter is the template. Membership growth was the right metric when there was no profit. It stopped being right when there was. Amplitude's own North Star changed from weekly querying users to weekly learning users, and they say so in their own playbook.<sup>7</sup></li>
+</ol>
+
+<p>Satish Meena of Datum Intelligence said something in September 2026 that I think is the actual conclusion here, about quick commerce but true more widely: "the era of growth at all costs is beginning to give way to a more unforgiving question, who can turn scale into a business that makes money."<sup>21</sup></p>
+
+<p>The same Business Today piece noted that money lost per order has become the more telling metric, replacing order volumes and GMV. That is a North Star denominated in rupees, chosen by the market rather than by a framework.</p>
+
+<p>Which is roughly where I have landed. Pick the thing your customers would celebrate seeing you measure, then put a money metric next to it and never look at one without the other.</p>
+
+</div>
+
+<div class="art-end">
+<h2>Sources</h2>
+<ol class="srcs">
+<li><a href="https://review.firstround.com/from-0-to-1b-slacks-founder-shares-their-epic-launch-strategy/" target="_blank" rel="noopener">Stewart Butterfield in First Round Review, 27 February 2015</a></li>
+<li><a href="https://future.com/north-star-metrics/" target="_blank" rel="noopener">Lenny Rachitsky, Choosing Your North Star Metric, Future (a16z), 15 June 2021</a></li>
+<li><a href="https://mode.com/blog/facebook-aha-moment-simpler-than-you-think/" target="_blank" rel="noopener">Mode on Facebook's aha moment</a>, repeating Palihapitiya's account without verifying it</li>
+<li><a href="https://medium.com/geckoboard-under-the-hood/how-facebooks-7-friends-in-10-days-got-everyone-confused-about-correlation-and-causation-25da4bb8220e" target="_blank" rel="noopener">Ben Newell, Geckoboard Under The Hood, 15 May 2017</a></li>
+<li><a href="https://mixpanel.com/blog/magic-numbers-are-an-illusion/" target="_blank" rel="noopener">Mixpanel, Magic numbers are an illusion</a>, 24 May 2016, updated 2 June 2026</li>
+<li><a href="https://mattermark.com/putting-it-all-together-how-josh-elman-identified-a-growth-driver-at-twitter/" target="_blank" rel="noopener">Sean Ellis on Josh Elman's Twitter growth work</a>, excerpt from Hacking Growth, 25 April 2017</li>
+<li><a href="https://info.amplitude.com/rs/138-CDN-550/images/Amplitude-The-North-Star-Playbook.pdf" target="_blank" rel="noopener">The North Star Playbook, Amplitude</a></li>
+<li><a href="https://brianbalfour.com/essays/north-star-metric-growth" target="_blank" rel="noopener">Brian Balfour, Don't Let Your North Star Metric Deceive You, 11 January 2018</a></li>
+<li><a href="https://www.thewrap.com/netflix-stop-reporting-subscriber-numbers-2025-engagement/" target="_blank" rel="noopener">Netflix's April 2024 shareholder letter, reported by TheWrap, 18 April 2024</a></li>
+<li><a href="https://www.fool.com/investing/2026/07/17/netflix-just-changed-how-often-it-reports-engageme/" target="_blank" rel="noopener">Motley Fool on Netflix's engagement reporting change, 17 July 2026</a></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1562088/000162828026053299/q2fy26duolingo6-30x26share.htm" target="_blank" rel="noopener">Duolingo Q2 2026 shareholder letter, filed with the SEC, 5 August 2026</a></li>
+<li><a href="https://b.zmtcdn.com/investor-relations/Eternal_Shareholders_Letter_Q1FY26_Results.pdf" target="_blank" rel="noopener">Eternal Q1 FY26 shareholders' letter</a></li>
+<li><a href="https://b.zmtcdn.com/investor-relations/Eternal_Shareholders_Letter_Q2FY26_Results.pdf" target="_blank" rel="noopener">Eternal Q2 FY26 shareholders' letter, 16 October 2025</a></li>
+<li><a href="https://www.swiggy.com/corporate/wp-content/uploads/2026/01/Q3-FY2026-Shareholder-letter.pdf" target="_blank" rel="noopener">Swiggy Q3 FY26 shareholder letter, 29 January 2026</a></li>
+<li><a href="https://exponentialcompass.substack.com/p/groww-has-131-crore-clients-zerodha" target="_blank" rel="noopener">Tushar Jejani, Exponential Compass, 28 July 2026</a></li>
+<li><a href="https://thesignal.in/business/2026/08/23/dream11-real-money-gaming-pivot-2026" target="_blank" rel="noopener">The Signal on Dream11's pivot, 23 August 2026</a></li>
+<li><a href="https://www.business-standard.com/companies/news/dream11-rmg-ban-new-strategy-revenue-loss-layoffs-125082600219_1.html" target="_blank" rel="noopener">Business Standard on the Dream11 ban, 26 August 2025</a></li>
+<li><a href="https://www.bvp.com/atlas/the-ai-pricing-and-monetization-playbook" target="_blank" rel="noopener">Bessemer Venture Partners, The AI Pricing and Monetization Playbook, 10 February 2026</a></li>
+<li><a href="https://www.therachitskyatlas.com/questions/north-star-metric-philosophy" target="_blank" rel="noopener">The Rachitsky Atlas on the North Star debate</a>, where Sri Batchu's paired-metric approach is described</li>
+<li><a href="https://www.reforge.com/blog/north-star-metrics" target="_blank" rel="noopener">Reforge, How to Choose and Measure North Star Metrics, 14 September 2022</a></li>
+<li><a href="https://www.businesstoday.in/magazine/cover-story/story/why-there-are-clear-signs-of-a-reset-in-indias-quick-commerce-sector-555364-2026-09-14" target="_blank" rel="noopener">Business Today cover story on the quick commerce reset, 14 September 2026</a></li>
+</ol>
+</div>
+
+    <div class="art-more">
+    <a href="quick-commerce-unit-economics.html"><small>Also written</small><b>What a SKU actually earns on Blinkit, Zepto and Instamart</b></a>
+    <a href="d2c-offline-too-early.html"><small>Also written</small><b>Why D2C brands go offline too early</b></a>
+    </div>
+
+    <div class="art-cta">
+      <p>I am <b>Preetam Priyabrat</b>, and I work on marketing, category, e-commerce and quick commerce, growth, product and strategy for consumer brands. If any of this is useful, or wrong, I would like to hear about it.</p>
+      <a class="btn" href="../index.html#contact">Get in touch <span class="isl"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 10.5l7-7M5 3.5h5.5V9"/></svg></span></a>
+    </div>
+  </article>
+</main>
+
+<script>
+(function(){
+  var btn=document.getElementById("themeBtn"); if(!btn) return;
+  var root=document.documentElement;
+  function sync(){
+    var dark=root.dataset.theme==="dark";
+    btn.setAttribute("aria-pressed",dark?"true":"false");
+    btn.setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode");
+    btn.title=dark?"Light mode":"Dark mode";
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m) m.setAttribute("content",dark?"#0E120F":"#F4F3EF");
+  }
+  sync();
+  btn.addEventListener("click",function(){
+    var dark=root.dataset.theme==="dark";
+    root.classList.add("theming");
+    if(dark) root.removeAttribute("data-theme"); else root.dataset.theme="dark";
+    try{localStorage.setItem("pp-theme",dark?"light":"dark")}catch(e){}
+    sync();
+    requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.remove("theming")})});
+  });
+})();
+</script>
+</body>
+</html>
