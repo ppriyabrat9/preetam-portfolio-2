@@ -913,6 +913,7 @@ kbd{font-family:var(--body);font-size:11px;font-weight:500;padding:2px 6px;borde
 .hero3.go .hero3-h .ln>span{transform:none}
 .hero3.go .hero3-h .ln:nth-child(2)>span{transition-delay:.09s}
 .hero3.go .hero3-h .ln:nth-child(3)>span{transition-delay:.18s}
+.hero3.go .hero3-h .ln:nth-child(4)>span{transition-delay:.27s}
 
 .rot{display:inline-grid;vertical-align:top;color:var(--green)}
 .rot>span{grid-area:1/1;opacity:0;transform:translateY(.34em);white-space:nowrap;
@@ -924,7 +925,9 @@ kbd{font-family:var(--body);font-size:11px;font-weight:500;padding:2px 6px;borde
 @media (prefers-reduced-motion:no-preference){.rot>span.on::after{animation:cr 1.15s steps(1) infinite}}
 @keyframes cr{0%,49%{opacity:1}50%,100%{opacity:0}}
 
-.hero3-sub{max-width:40ch;margin-bottom:26px}
+.rotwrap{display:inline-block;max-width:100%}
+
+.hero3-sub{max-width:min(100%,40ch);margin-bottom:26px}
 .hero3 .cta-row{margin-bottom:4px}
 
 /* the photo, full bleed, desk resting on the bottom edge */
@@ -1334,6 +1337,12 @@ html[data-theme="dark"]{--bub-bg:rgba(22,28,24,.74);--bub-bg-hover:rgba(32,40,34
   .bub:nth-child(3){animation-delay:2.2s!important}
   .bub:nth-child(4){animation-delay:2.5s!important}
 }
+/* Narrow desktops: the text column eats most of the left half, so the ROAS
+   bubble moves over to the right rather than sitting on the buttons. */
+@media (min-width:861px) and (max-width:1120px){
+  .bub:nth-child(3){left:auto;right:3%;bottom:13%}
+  .bub:nth-child(1){left:auto;right:3%;top:40%}
+}
 
 /* hero on phones: whole thing on one screen */
 @media (max-width:860px){
@@ -1389,9 +1398,17 @@ html[data-theme="dark"] .nk i{color:var(--amber)}
   border-top:1px solid var(--rule);
   gap:clamp(18px,2.6vw,44px);
 }
-.how>div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
-.how>div b{font-family:var(--display);font-style:italic;font-weight:400;color:var(--green);font-size:17px;line-height:1.3;opacity:.9}
-.how>div span{font-size:14px;line-height:1.55;color:var(--ink-2);max-width:34ch}
+.how{list-style:none;padding-left:0}
+.how>li{display:block;padding-top:14px;border-top:1px solid var(--rule-2)}
+.how>li b{
+  display:block;font-family:var(--display);font-style:italic;font-weight:400;
+  color:var(--green);font-size:15px;line-height:1;opacity:.9;margin-bottom:9px
+}
+.how>li strong{
+  display:block;font-family:var(--display);font-weight:600;font-size:17px;
+  letter-spacing:-.02em;line-height:1.25;color:var(--ink);margin-bottom:5px
+}
+.how>li span{display:block;font-size:14px;line-height:1.55;color:var(--ink-2);max-width:30ch}
 @media (max-width:860px){.how{grid-template-columns:1fr;gap:14px}}
 
 /* ---- hero: lift the availability pill ---- */
@@ -1815,3 +1832,63 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
 /* ---- live-site shots: one frame aspect, matching the capture. Never distort. ---- */
 .bw-shot{aspect-ratio:1280/682;object-fit:cover;object-position:top center;width:100%;height:auto}
 .dw-page{object-fit:cover;object-position:top center}
+
+
+/* White brand marks sitting on the pale logo tiles (carousel and cards).
+   Those tiles keep their light tint in both themes, so the mark is flipped to
+   black in both. The marquee has its own, more specific .lg-item rules. */
+img.inv{filter:brightness(0)}
+
+/* Competition wins on the Hive School card: a quiet rule-topped line,
+   smaller than .ed-hl so it reads as a footnote to the programme. */
+.ed-win{
+  list-style:none;margin:12px 0 0;padding:11px 0 0;border-top:1px solid var(--rule-2);
+  font-size:13.5px;line-height:1.5;color:var(--ink-2);display:grid;gap:5px
+}
+.ed-win li{position:relative;padding-left:15px}
+.ed-win li::before{
+  content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;
+  border-radius:50%;background:var(--green)
+}
+.ed-win b{color:var(--ink);font-weight:600}
+
+/* =========================================================
+   CAROUSEL: one card, one screen
+   The cards were 900x700, so on a laptop you had to scroll to see
+   the bottom of one. Everything below trims the vertical rhythm and
+   widens the card instead, and a dot strip replaces hunting for the
+   arrows.
+   ========================================================= */
+@media (min-width:861px){
+  .carou{--cw:min(1040px,78vw)}
+  .carou-track{padding-top:6px;padding-bottom:10px}
+  .carou .cs-info{padding:clamp(18px,1.9vw,26px)}
+  .carou .cs-meta{margin-bottom:12px}
+  .carou .cs-logo{width:38px;height:38px;border-radius:11px;padding:7px}
+  .carou .cs h3{font-size:clamp(18px,1.55vw,23px);max-width:26ch}
+  .carou .cs-a{font-size:13.5px;line-height:1.5;margin-top:9px;padding:10px 12px}
+  .carou .cs-stats{margin-bottom:12px}
+  .carou .cs-stats>div{padding-top:9px}
+  .carou .cs-stats dd{font-size:clamp(15px,1.25vw,18px)}
+  .carou .cs-stats dt{font-size:10.5px;margin-top:3px}
+  .carou .cs-in{margin-bottom:12px}
+  .carou .cs-prev{padding:clamp(14px,1.7vw,24px)}
+  .carou .bw{max-width:400px}
+  .carou .bw-bar{height:28px}
+  .carou .bw-sum{padding:11px 14px 14px;gap:4px}
+  .carou .bw-h{font-size:clamp(14px,1.2vw,17px)}
+  .carou .dw-flat{max-width:400px}
+}
+
+/* dot strip under the track */
+.carou-dots{
+  display:flex;justify-content:center;align-items:center;flex-wrap:wrap;
+  gap:6px;margin:16px auto 0;padding:0 20px;max-width:760px
+}
+.carou-dots button{
+  width:16px;height:4px;padding:0;border:0;border-radius:999px;cursor:pointer;
+  background:var(--rule-2);transition:width .35s var(--ease),background-color .35s var(--ease)
+}
+.carou-dots button:hover{background:var(--mute)}
+.carou-dots button[aria-current="true"]{width:32px;background:var(--green)}
+@media (max-width:620px){.carou-dots{gap:5px}.carou-dots button{width:12px}.carou-dots button[aria-current="true"]{width:24px}}

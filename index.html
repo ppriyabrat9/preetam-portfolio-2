@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Preetam Priyabrat | Growth &amp; Strategy</title>
-<meta name="description" content="Preetam Priyabrat. Growth, brand and category strategy for consumer brands, from an operator who has run the P&amp;L. Founder of Gripply and Ripenseed.">
+<title>Preetam Priyabrat | Growth, Category &amp; B2B Demand</title>
+<meta name="description" content="Preetam Priyabrat. Marketing, category, e-commerce and quick commerce, growth, strategy, demand generation and product marketing, from an operator who has run the P&amp;L on a consumer brand and on a B2G book. Founder of Gripply.">
 <meta name="theme-color" content="#F4F3EF">
-<meta property="og:title" content="Preetam Priyabrat | Growth &amp; Strategy">
-<meta property="og:description" content="Growth, category and GTM for consumer brands, from an operator who has run the P&amp;L.">
+<meta property="og:title" content="Preetam Priyabrat | Growth, Category &amp; B2B Demand">
+<meta property="og:description" content="Consumer growth and category work, plus demand generation and product marketing, from an operator who has run the P&amp;L.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161615'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='28' fill='%23EDEDE9'%3EPP%3C/text%3E%3C/svg%3E">
 <style>
@@ -925,6 +925,7 @@ kbd{font-family:var(--body);font-size:11px;font-weight:500;padding:2px 6px;borde
 .hero3.go .hero3-h .ln>span{transform:none}
 .hero3.go .hero3-h .ln:nth-child(2)>span{transition-delay:.09s}
 .hero3.go .hero3-h .ln:nth-child(3)>span{transition-delay:.18s}
+.hero3.go .hero3-h .ln:nth-child(4)>span{transition-delay:.27s}
 
 .rot{display:inline-grid;vertical-align:top;color:var(--green)}
 .rot>span{grid-area:1/1;opacity:0;transform:translateY(.34em);white-space:nowrap;
@@ -936,7 +937,9 @@ kbd{font-family:var(--body);font-size:11px;font-weight:500;padding:2px 6px;borde
 @media (prefers-reduced-motion:no-preference){.rot>span.on::after{animation:cr 1.15s steps(1) infinite}}
 @keyframes cr{0%,49%{opacity:1}50%,100%{opacity:0}}
 
-.hero3-sub{max-width:40ch;margin-bottom:26px}
+.rotwrap{display:inline-block;max-width:100%}
+
+.hero3-sub{max-width:min(100%,40ch);margin-bottom:26px}
 .hero3 .cta-row{margin-bottom:4px}
 
 /* the photo, full bleed, desk resting on the bottom edge */
@@ -1346,6 +1349,12 @@ html[data-theme="dark"]{--bub-bg:rgba(22,28,24,.74);--bub-bg-hover:rgba(32,40,34
   .bub:nth-child(3){animation-delay:2.2s!important}
   .bub:nth-child(4){animation-delay:2.5s!important}
 }
+/* Narrow desktops: the text column eats most of the left half, so the ROAS
+   bubble moves over to the right rather than sitting on the buttons. */
+@media (min-width:861px) and (max-width:1120px){
+  .bub:nth-child(3){left:auto;right:3%;bottom:13%}
+  .bub:nth-child(1){left:auto;right:3%;top:40%}
+}
 
 /* hero on phones: whole thing on one screen */
 @media (max-width:860px){
@@ -1401,9 +1410,17 @@ html[data-theme="dark"] .nk i{color:var(--amber)}
   border-top:1px solid var(--rule);
   gap:clamp(18px,2.6vw,44px);
 }
-.how>div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
-.how>div b{font-family:var(--display);font-style:italic;font-weight:400;color:var(--green);font-size:17px;line-height:1.3;opacity:.9}
-.how>div span{font-size:14px;line-height:1.55;color:var(--ink-2);max-width:34ch}
+.how{list-style:none;padding-left:0}
+.how>li{display:block;padding-top:14px;border-top:1px solid var(--rule-2)}
+.how>li b{
+  display:block;font-family:var(--display);font-style:italic;font-weight:400;
+  color:var(--green);font-size:15px;line-height:1;opacity:.9;margin-bottom:9px
+}
+.how>li strong{
+  display:block;font-family:var(--display);font-weight:600;font-size:17px;
+  letter-spacing:-.02em;line-height:1.25;color:var(--ink);margin-bottom:5px
+}
+.how>li span{display:block;font-size:14px;line-height:1.55;color:var(--ink-2);max-width:30ch}
 @media (max-width:860px){.how{grid-template-columns:1fr;gap:14px}}
 
 /* ---- hero: lift the availability pill ---- */
@@ -1828,6 +1845,65 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
 .bw-shot{aspect-ratio:1280/682;object-fit:cover;object-position:top center;width:100%;height:auto}
 .dw-page{object-fit:cover;object-position:top center}
 
+
+/* White brand marks sitting on the pale logo tiles (carousel and cards).
+   Those tiles keep their light tint in both themes, so the mark is flipped to
+   black in both. The marquee has its own, more specific .lg-item rules. */
+img.inv{filter:brightness(0)}
+
+/* Competition wins on the Hive School card: a quiet rule-topped line,
+   smaller than .ed-hl so it reads as a footnote to the programme. */
+.ed-win{
+  list-style:none;margin:12px 0 0;padding:11px 0 0;border-top:1px solid var(--rule-2);
+  font-size:13.5px;line-height:1.5;color:var(--ink-2);display:grid;gap:5px
+}
+.ed-win li{position:relative;padding-left:15px}
+.ed-win li::before{
+  content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;
+  border-radius:50%;background:var(--green)
+}
+.ed-win b{color:var(--ink);font-weight:600}
+
+/* =========================================================
+   CAROUSEL: one card, one screen
+   The cards were 900x700, so on a laptop you had to scroll to see
+   the bottom of one. Everything below trims the vertical rhythm and
+   widens the card instead, and a dot strip replaces hunting for the
+   arrows.
+   ========================================================= */
+@media (min-width:861px){
+  .carou{--cw:min(1040px,78vw)}
+  .carou-track{padding-top:6px;padding-bottom:10px}
+  .carou .cs-info{padding:clamp(18px,1.9vw,26px)}
+  .carou .cs-meta{margin-bottom:12px}
+  .carou .cs-logo{width:38px;height:38px;border-radius:11px;padding:7px}
+  .carou .cs h3{font-size:clamp(18px,1.55vw,23px);max-width:26ch}
+  .carou .cs-a{font-size:13.5px;line-height:1.5;margin-top:9px;padding:10px 12px}
+  .carou .cs-stats{margin-bottom:12px}
+  .carou .cs-stats>div{padding-top:9px}
+  .carou .cs-stats dd{font-size:clamp(15px,1.25vw,18px)}
+  .carou .cs-stats dt{font-size:10.5px;margin-top:3px}
+  .carou .cs-in{margin-bottom:12px}
+  .carou .cs-prev{padding:clamp(14px,1.7vw,24px)}
+  .carou .bw{max-width:400px}
+  .carou .bw-bar{height:28px}
+  .carou .bw-sum{padding:11px 14px 14px;gap:4px}
+  .carou .bw-h{font-size:clamp(14px,1.2vw,17px)}
+  .carou .dw-flat{max-width:400px}
+}
+
+/* dot strip under the track */
+.carou-dots{
+  display:flex;justify-content:center;align-items:center;flex-wrap:wrap;
+  gap:6px;margin:16px auto 0;padding:0 20px;max-width:760px
+}
+.carou-dots button{
+  width:16px;height:4px;padding:0;border:0;border-radius:999px;cursor:pointer;
+  background:var(--rule-2);transition:width .35s var(--ease),background-color .35s var(--ease)
+}
+.carou-dots button:hover{background:var(--mute)}
+.carou-dots button[aria-current="true"]{width:32px;background:var(--green)}
+@media (max-width:620px){.carou-dots{gap:5px}.carou-dots button{width:12px}.carou-dots button[aria-current="true"]{width:24px}}
 </style>
 </head>
 <body class="pre">
@@ -1880,12 +1956,12 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
   <div class="wrap">
     <div class="hero3-main">
       <p class="hero-open"><i></i>Open to roles</p>
-      <h1 class="hero3-h" aria-label="I drive marketing, category, e-commerce and quick commerce, growth, product and strategy for consumer brands.">
+      <h1 class="hero3-h" aria-label="I drive marketing, category, e-commerce and quick commerce, growth, strategy, demand generation and product marketing for scaling businesses.">
         <span class="ln"><span>I drive</span></span>
         <span class="ln"><span class="rotwrap"><span class="rot" id="rot"></span></span></span>
-        <span class="ln"><span>for consumer brands.</span></span>
+        <span class="ln"><span>for scaling businesses.</span></span>
       </h1>
-      <p class="hero-lede hero3-sub">Three years of <strong>P&amp;Ls, vendors and my own D2C brands</strong>. Now pointed at demand, conversion and margin.</p>
+      <p class="hero-lede hero3-sub">Three years of <strong>P&amp;Ls, tenders and a D2C brand of my own</strong>. Consumer and B2B, pointed at demand, pipeline and margin.</p>
       <div class="cta-row">
         <a class="btn" href="#work">See the work <span class="isl"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 2.5v9M3 7.5l4 4 4-4"/></svg></span></a>
         <a class="btn btn-line" href="assets/Preetam-Priyabrat-CV.pdf" download>Download CV <span class="isl"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 2v8M3.5 6.8L7 10.3l3.5-3.5M2.5 12h9"/></svg></span></a>
@@ -1893,7 +1969,7 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
       <div class="bubs">
         <div class="bub"><b>₹7 <i>&rarr;</i> ₹12 Cr</b><span>Revenue scaled in one FY</span></div>
         <div class="bub"><b>₹117 Cr+</b><span>Procurement spend sourced</span></div>
-        <div class="bub"><b>2</b><span>Brands built from zero to launch</span></div>
+        <div class="bub"><b>4.5x</b><span>ROAS on my own D2C brand</span></div>
         <div class="bub"><b>₹90</b><span>CAC achieved</span></div>
       </div>
     </div>
@@ -1911,13 +1987,13 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
     </header>
     <div class="why rv">
       <div class="why-top">
-        <p class="why-lead">Most people come into growth from one side of the business. They know the marketing, or they know the numbers. I have had to run <em>both</em>, usually with my own money on the line.</p>
-        <p class="why-close">So when a plan says "lift conversion" or "fix the category", I already know which parts are hard, which are expensive, and which are only a slide. <b>I will not be the fastest person in the room on any single tool. I will be the one who can tell you what the number is actually made of.</b></p>
+        <p class="why-lead">Most people come into growth from one side of the business. They know the marketing, or they know the numbers. I have had to run <em>both</em>, on a consumer brand with my own money and on a B2G book where the buyer runs a committee.</p>
+        <p class="why-close">So when a plan says "lift conversion", "fix the category" or "build pipeline", I already know which parts are hard, which are expensive, and which are only a slide. <b>I will not be the fastest person in the room on any single tool. I will be the one who can tell you what the number is actually made of.</b></p>
       </div>
       <ol class="why-rows">
         <li><b>₹117 Cr</b><span><em>Procurement spend sourced, five countries.</em> 1,700+ requisitions, 3 to 7% off last purchase price, about ₹19 lakh saved a year.</span></li>
         <li><b>₹7 Cr <i>&rarr;</i> ₹12 Cr</b><span><em>One financial year.</em> Rebuilt how six entities bid, priced and collected. Win rate 15% to 25%, receivables halved.</span></li>
-        <li><b>2 brands, ₹90 CAC</b><span><em>Built from zero, my own money.</em> Which is why I know what a cheap acquisition really costs you in packaging, pricing and patience.</span></li>
+        <li><b>4.5x ROAS, ₹90 CAC</b><span><em>Gripply, built from zero with my own money.</em> Which is why I know what a cheap acquisition really costs you in packaging, pricing and patience.</span></li>
       </ol>
     </div>
   </div>
@@ -1953,17 +2029,18 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
       </div>
       <p class="lede">Nobody asked me to build any of this. I pick a category or a brand I want to understand, collect the numbers myself from the app, the shelf or the ad library, and publish the answer as a live site anyone can open.</p>
     </header>
-    <div class="how rv">
-      <div><b>01</b><span>Pick a question a category or growth team is actually arguing about</span></div>
-      <div><b>02</b><span>Collect the numbers myself, from the app, the shelf or the tender archive</span></div>
-      <div><b>03</b><span>Publish the answer in whatever form fits it, a live site or a document, with a plan someone could be handed and run</span></div>
-    </div>
+    <ol class="how rv">
+      <li><b>01</b><strong>Pick the question</strong><span>One a category or growth team is already arguing about.</span></li>
+      <li><b>02</b><strong>Get the numbers</strong><span>By hand, from the app, the shelf or the tender archive.</span></li>
+      <li><b>03</b><strong>Publish the answer</strong><span>A live site or a document, with a plan someone could run.</span></li>
+    </ol>
   </div>
   <div class="carou rv" id="carou">
     <div class="carou-track" id="carouTrack"></div>
     <button type="button" class="nav-b prev" id="carPrev" aria-label="Previous study"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2.5L4 7l5 4.5"/></svg></button>
     <button type="button" class="nav-b next" id="carNext" aria-label="Next study"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 2.5L10 7l-5 4.5"/></svg></button>
   </div>
+  <div class="carou-dots" id="carouDots" role="tablist" aria-label="Jump to a study"></div>
 </section>
 
 <section class="section" id="index" style="padding-top:clamp(40px,5vw,72px)">
@@ -2011,7 +2088,7 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
 <section class="section built" id="built">
   <div class="wrap">
     <header class="sh split rv">
-      <h2 class="h2">Two brands I started <em>myself</em>.</h2>
+      <h2 class="h2">A brand I started <em>myself</em>.</h2>
       <p class="lede">Taken from zero with my own money. This is where the frameworks stopped being frameworks and met real customers, real inventory and real cash.</p>
     </header>
 
@@ -2019,8 +2096,8 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
       <button type="button" class="v-media ph has-img wide" data-lb="gripply" data-lb-i="0" aria-label="Open Gripply photos"><img id="gMain" alt="Gripply pop-up table with customers and the team in Gripply T-shirts" loading="lazy"></button>
       <div>
         <h3 class="v-name">Gripply</h3>
-        <p class="v-kicker">Founder, Gurugram · May 2025 to present</p>
-        <p class="v-desc">Premium, minimal phone accessories. The hero product is a bendable silicone phone stand. I built the positioning, packaging, price ladder and Shopify storefront, running 20+ SKUs on a hybrid owned-inventory and dropship model to keep cash risk low.</p>
+        <p class="v-kicker">Founder, Gurugram · May 2026 to July 2026</p>
+        <p class="v-desc">Premium, minimal phone accessories. The hero product is a bendable silicone phone stand. I built the positioning, packaging, price ladder and Shopify storefront, running 20+ SKUs on a hybrid owned-inventory and dropship model to keep cash risk low. It started as a four-person D2C build at Hive School’s Grand Bazaar, and I took it from positioning and packaging through to pitching investors and CxOs.</p>
         <dl class="v-facts">
           <div><dt>Offline pop-up, first day</dt><dd>Sold out</dd></div>
           <div><dt>Pop-up revenue</dt><dd>₹30,000</dd></div>
@@ -2039,38 +2116,6 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
       <div class="gal-grid" id="galGrid"></div>
     </div>
 
-    <article class="venture flip rv">
-      <div class="v-media ph has-img"><img src="assets/img/ripenseed.webp" alt="Ripenseed pantry range" loading="lazy"></div>
-      <div>
-        <h3 class="v-name">Ripenseed</h3>
-        <p class="v-kicker">Co-founder, Indore · 2019 to present</p>
-        <div class="thennow">
-          <div class="tn">
-            <span class="tn-k">Where it started</span>
-            <p>Co-founded in 2019 as a hyperlocal vegetable supply business serving households and hotel partners in Bhopal, incubated at the Atal Incubation Centre, Prestige Inspire Foundation in Indore, running about ₹10,000 of GMV a day at peak. COVID broke the supply side and we paused it.</p>
-          </div>
-          <div class="tn">
-            <span class="tn-k">Where it is now</span>
-            <p>Relaunched under the same entity as a modern pantry brand for solo and couple urban home cooks: five seasonings in counter-worthy, mess-free jars, sourced and labelled in-house, selling at ripenseed.in with quick commerce next.</p>
-          </div>
-        </div>
-        <dl class="v-facts">
-          <div><dt>Live range</dt><dd>5 SKUs</dd></div>
-          <div><dt>Trademark</dt><dd>Registered</dd></div>
-          <div><dt>Anchor customer</dt><dd>Solo, duo</dd></div>
-        </dl>
-        <div class="v-tags"><span class="chip">Brand strategy</span><span class="chip">Brand DNA</span><span class="chip">ICP</span><span class="chip">Assortment</span><span class="chip">Price ladder</span><span class="chip">Q-commerce GTM</span></div>
-        <a class="link" href="https://www.ripenseed.in" target="_blank" rel="noopener">Visit ripenseed.in <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l6-6M4.5 3H9v4.5"/></svg></a>
-      </div>
-    </article>
-
-    <div class="gal rv" aria-labelledby="rgal-h">
-      <div class="gal-h">
-        <div><h3 id="rgal-h">Inside Ripenseed</h3><p>The relaunch end to end: buying the spices and the glass by hand, proofing the labels on the press, and the range as it finally lands on a counter. Tap any photo to see it full size.</p></div>
-        <span class="cnt" id="rgalCnt"></span>
-      </div>
-      <div class="gal-grid" id="rgalGrid"></div>
-    </div>
   </div>
 </section>
 
@@ -2117,7 +2162,7 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
         <div class="wx-ph">
           <h5>Operations and supply chain <span>Feb 2025 to Sep 2025, Indore</span></h5>
           <ul>
-            <li>Managed 50+ vendors and 150 to 200 dispatches a month across 20+ product categories.</li>
+            <li>Managed 50+ vendors and 150 to 200 dispatches a month across 12+ product categories.</li>
             <li>Built a centralised order-tracking dashboard that <b>cut delivery delays by 40%</b>.</li>
             <li><b>Halved outstanding receivables from ₹2 Cr to ₹1 Cr</b> and cut payment cycle time by 30% through structured follow-ups and reconciliation.</li>
           </ul>
@@ -2139,7 +2184,9 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
             <li>Owned procurement and sourcing for Capex and consumables: <b>1,700+ purchase requisitions and ₹117 Cr+ of spend</b> across India, China, Turkey, Germany and Africa.</li>
             <li>Used ZOPA and BATNA negotiation to cut costs <b>3 to 7% versus last purchase price</b>, saving about ₹19 lakh a year.</li>
             <li>Converted requisitions to purchase orders within target lead times: 21 days for consumables, 45 for Capex. Ran third-party inspections and international freight.</li>
-            <li>Visited <b>35+ manufacturing plants in Nigeria</b> to map process flows and set specs, and trained 5 graduate engineer trainees on ERP and sourcing.</li>
+            <li>Developed <b>15+ new vendors</b> to widen sourcing options and cut supply risk, and ran 50+ third-party and self-inspections before dispatch.</li>
+            <li>Hit <b>99% technical acceptance</b> and GRN completion on material delivered to the Nigerian plants, with 30+ urgent shipments expedited by air.</li>
+            <li>Visited <b>35+ manufacturing plants in Nigeria</b> to map process flows and set specs, and trained 5 graduate engineer trainees on procurement, ERP and negotiation in 3 months. Recognised with the group’s <b>Best Mentor Award</b>.</li>
           </ul>
         </div>
       </article>
@@ -2199,8 +2246,9 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
         <div class="ed-b">
           <span class="ed-now">Now</span>
           <h3>Hive School of Business</h3><p class="ed-k">Postgraduate programme</p>
-          <p class="ed-prog">PGP in Revenue, Tech &amp; Entrepreneurship, Cohort 2</p>
+          <p class="ed-prog">PGP in Revenue, AI &amp; Entrepreneurship, Cohort 2</p>
           <p class="ed-hl">Nine months of sales, growth and building businesses, taught by founders and operators.</p>
+          <ul class="ed-win"><li><b>Winner, 1 of 6</b> GTM teardown ODC with MoEngage</li><li><b>Winner, 1 of 8</b> Best Commercial Buyer, buying committee ODC</li></ul>
           <p class="ed-loc"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 12.5s4-3.6 4-6.8a4 4 0 0 0-8 0c0 3.2 4 6.8 4 6.8z"/><circle cx="7" cy="5.7" r="1.4"/></svg>2026 to present, Gurugram</p>
         </div>
       </article>
@@ -2209,13 +2257,13 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
           <button type="button" class="ed-img" data-lb="edu" data-lb-i="1" aria-label="View MIT Manipal photo full size"><img src="assets/img/manipal.webp" alt="Manipal Institute of Technology campus" loading="lazy"></button>
           <div class="ed-b"><h3>Manipal Institute of Technology</h3><p class="ed-k">Undergraduate</p>
             <p class="ed-prog">B.Tech, Electrical &amp; Electronics Engineering</p>
-            <p class="ed-hl">Head of Videography, The Photography Club: led 250+ members across 30+ events.</p>
+            <p class="ed-hl">Department Head at the Photography Club, a 120+ member content team across 30+ events. Category Head for content and socials at Revels, the annual fest: 50-member team, 10,000+ footfall.</p>
             <p class="ed-loc"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 12.5s4-3.6 4-6.8a4 4 0 0 0-8 0c0 3.2 4 6.8 4 6.8z"/><circle cx="7" cy="5.7" r="1.4"/></svg>Manipal, Karnataka</p></div>
         </article>
         <article class="ed-card">
           <button type="button" class="ed-img" data-lb="edu" data-lb-i="2" aria-label="View AIC Prestige photo full size"><img src="assets/img/aic.webp" alt="Atal Incubation Centre, Prestige, Indore" loading="lazy"></button>
           <div class="ed-b"><h3>Atal Incubation Centre, Prestige</h3><p class="ed-k">Incubation</p>
-            <p class="ed-prog">Incubated Ripenseed, my first company</p>
+            <p class="ed-prog">Incubated my first company</p>
             <p class="ed-hl">Supported by the Atal Innovation Mission, NITI Aayog.</p>
             <p class="ed-loc"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 12.5s4-3.6 4-6.8a4 4 0 0 0-8 0c0 3.2 4 6.8 4 6.8z"/><circle cx="7" cy="5.7" r="1.4"/></svg>Indore, Madhya Pradesh</p></div>
         </article>
@@ -2304,13 +2352,15 @@ html[data-theme="dark"] .rp-fit{background:var(--green-s)}
    the index filters and the role picker. Keep the labels short. */
 const PILLARS = [
   { k:"Marketing" }, { k:"Category" }, { k:"E-com & Q-com" },
-  { k:"Growth" }, { k:"Product" }, { k:"Strategy" }
+  { k:"Growth" }, { k:"Strategy" }, { k:"Demand Gen" },
+  { k:"Product Marketing" }
 ];
 
 /* Brand marks, from assets/logos. inv:true for white-on-transparent marks. */
 const LOGOS = {
   bsc:{src:"assets/logos/bsc.png",dk:true},
   blinkit:{src:"assets/logos/blinkit.png"},
+  brewcontent:{src:"assets/logos/brewcontent.svg"},
   cheq:{src:"assets/logos/cheq.svg"},
   district:{src:"assets/logos/district.png",dk:true},
   emami:{src:"assets/logos/emami.png"},
@@ -2321,8 +2371,11 @@ const LOGOS = {
   pocketfm:{src:"assets/logos/pocketfm.png"},
   proteinpantry:{src:"assets/logos/proteinpantry.png"},
   snitch:{src:"assets/logos/snitch.png",dk:true},
+  sova:{src:"assets/logos/sova.png",srcDark:"assets/logos/sova-dark.png"},
   subko:{src:"assets/logos/subko.png",dk:true},
-  wakefit:{src:"assets/logos/wakefit.png",srcDark:"assets/logos/wakefit-dark.png"}
+  wakefit:{src:"assets/logos/wakefit.png",srcDark:"assets/logos/wakefit-dark.png"},
+  wondergifts:{src:"assets/logos/wondergifts.png",srcDark:"assets/logos/wondergifts-dark.png"},
+  zoomies:{src:"assets/logos/zoomies.png",inv:true}
 };
 
 /* Tool marks, from assets/tools. A tool with no entry shows a lettermark. */
@@ -2381,7 +2434,7 @@ const TOOLS = [
   "Microsoft Dynamics 365","SAP","GeM portal","Figma","Canva","Claude Code","Notion",
   "SQL","Python","BigQuery","Google Analytics 4","Looker Studio","Power BI","Tableau",
   "Google Tag Manager","Google Trends","Google Merchant Center","Microsoft Clarity","Hotjar","VWO",
-  "Amazon Ads","Amazon Seller Central","Flipkart Seller Hub","Blinkit, Zepto, Instamart seller portals",
+  "YouTube Ads","Amazon Ads","Amazon Seller Central","Flipkart Seller Hub","Blinkit, Zepto, Instamart seller portals",
   "Shiprocket","Unicommerce","WhatsApp Business API","CleverTap","MoEngage","WebEngage","Klaviyo",
   "AppsFlyer","Mixpanel","Amplitude","HubSpot CRM","Salesforce","Zoho CRM",
   "Semrush","Ahrefs","Similarweb","Sprout Social"
@@ -2393,7 +2446,7 @@ const TOOLS = [
    featured:true puts it in the carousel. image: the card picture. */
 const WORK = [
   { id:"district", brand:"District by Zomato", logo:"district", tone:"#ECE6F3", acc:"#2A1240", status:"live", featured:true,
-    url:"https://sunny-taffy-78ea64.netlify.app/", type:"Live study", tags:["Category","Product","E-com & Q-com"],
+    url:"https://sunny-taffy-78ea64.netlify.app/", type:"Live study", tags:["Category","E-com & Q-com","Strategy"],
     image:"assets/work/district.jpg", shot:"assets/work/district-shot.jpg", kicker:"Live study · Category, Electronics",
     title:"A category plan for Electronics on District Stores.",
     q:"A category plan for Electronics on District Stores.",
@@ -2424,7 +2477,7 @@ const WORK = [
     a:"A WhatsApp capture at the till, a Fit ID that sizes a customer once and remembers it, and an early-access ladder that replaces discount-led loyalty.",
     stats:[["1 fit","sized once at the till, reused every order"],["WhatsApp","where the second order actually happens"],["Access","early drops instead of another discount"]] },
 
-  { id:"kuku", brand:"Kuku", logo:"kuku", tone:"#F8E5E2", acc:"#7A1B14", status:"doc", featured:true, url:"", type:"Growth diagnostic", tags:["Growth","Marketing","Product"],
+  { id:"kuku", brand:"Kuku", logo:"kuku", tone:"#F8E5E2", acc:"#7A1B14", status:"doc", featured:true, url:"", type:"Growth diagnostic", tags:["Growth","Marketing","Strategy"],
     image:"assets/work/kuku.jpg", cover:"assets/covers/kuku.jpg", kicker:"Growth diagnostic · 12 pages",
     title:"A 12-week plan to buy retained payers instead of installs.",
     q:"A 12-week plan to buy retained payers instead of installs.",
@@ -2439,6 +2492,41 @@ const WORK = [
     a:"I reconciled the FY26 exchange filings, verified capex per owned store at ₹26.4 lakh, and made the case for gating owned-store expansion in favour of a multi-brand network already 10.8 times the size.",
     stats:[["₹26.4L","capex per owned store, RHP-verified"],["1,504","multi-brand outlets already reached"],["10.8×","the owned footprint, at a fraction of the capital"]],
     docs:[{label:"12-month strategy memo",file:"assets/docs/Wakefit-12-Month-Growth-Strategy.pdf",kind:"PDF"}] },
+
+  { id:"brewcontent", brand:"Brewcontent", logo:"brewcontent", tone:"#EFE8FB", acc:"#4A1D86", status:"live", featured:true,
+    url:"https://brewcontent-growth-strategy.netlify.app/", type:"Live study", tags:["Demand Gen","Product Marketing","Growth"],
+    image:"assets/work/brewcontent.jpg", shot:"assets/work/brewcontent-shot.jpg", kicker:"Live study · B2B SaaS, demand and positioning",
+    title:"A demand engine for a seed-stage SaaS with no inbound and no proof.",
+    q:"A demand engine for a seed-stage SaaS with no inbound and no proof.",
+    a:"97% of traffic was direct, which means nobody was discovering it. The product was fine; the category it sold into was one nobody searches for. I repositioned it against the job buyers actually have, chose a sales-led, product-assisted motion with give-first outbound to agencies and D2C brands, and set a month-6 bar: 20 design partners, six named case studies and a known CAC and payback for every channel.",
+    stats:[["97%","of traffic direct, so no discovery engine at all"],["~158","unique people a month behind 1,080 visits"],["20","design partners as the month-6 proof bar"]] },
+
+  { id:"zoomies", brand:"Zoomies", logo:"zoomies", tone:"#E6F0F7", acc:"#0F3A5C", status:"live", featured:true,
+    url:"https://zoomies-category-preetam.netlify.app/", type:"Live study", tags:["Category","E-com & Q-com","Strategy"],
+    image:"assets/work/zoomies.jpg", shot:"assets/work/zoomies-shot.jpg", kicker:"Live study · Category, pet food",
+    title:"Back the winners, keep shelves full, and show the proof.",
+    q:"Back the winners, keep shelves full, and show the proof.",
+    a:"I counted the shelf instead of reading the deck: 22 live listings, 45 pack options, 26 Blinkit pincodes and 30 Zepto stores. Availability, not demand, was the binding constraint, with 29% of Blinkit listings in stock and the brand absent from the top 12 in all 26 pincodes. The plan concentrates spend behind the one line already carrying 43% of visible Amazon demand and fixes fill rate before it buys more traffic.",
+    stats:[["29%","of Blinkit listings in stock across 26 pincodes"],["43%","of visible Amazon demand from one line"],["0 of 26","pincodes with a top-12 Blinkit placement"]] },
+
+  { id:"wondergifts", brand:"Wondergifts", logo:"wondergifts", tone:"#E6EDF7", acc:"#012C59", status:"doc", featured:true, url:"",
+    type:"Celebrity gifting plan", tags:["Marketing","Strategy","Growth"],
+    image:"assets/work/wondergifts.jpg", cover:"assets/covers/wondergifts.jpg", kicker:"Celebrity gifting plan \u00b7 10 pages",
+    title:"Every box holds a letter written in the language of its owner’s life.",
+    q:"Every box holds a letter written in the language of its owner’s life.",
+    a:"The agency’s deal buys one story, posted only if the celebrity feels like it, so the box has to be about her rather than about us. I opened all 43 profiles on the list in a day, cut five on brand safety and scored the rest, then wrote two ready-to-shoot scripts: a classified mission brief for a soap lead five years married with twin toddlers, and an offer letter for an ex-Google engineer who bet on herself. Same retainer, same single story, a better reason to post.",
+    stats:[["43 → 15","profiles opened, scored and cut to a roster"],["5 cut","on brand safety before anything else"],["15 letters","one per life, each timed to a real milestone"]],
+    docs:[{label:"Celebrity gifting plan",file:"assets/docs/Wondergifts-Celebrity-Gifting-Plan.pdf",kind:"PDF"},
+          {label:"The brief I was given",file:"assets/docs/Wondergifts-Assignment-Brief.docx",kind:"DOCX"},
+          {label:"The agency's media plan",file:"assets/docs/Wondergifts-x-GMH-Plan.xlsx",kind:"XLSX"}] },
+
+  { id:"sova", brand:"Sova Health", logo:"sova", tone:"#E3F2E9", acc:"#133026", status:"live", featured:true,
+    url:"https://sova-category-plan.netlify.app/", type:"Live study", tags:["Category","E-com & Q-com","Growth","Marketing"],
+    image:"assets/work/sova.jpg", shot:"assets/work/sova-shot.jpg", kicker:"Live study \u00b7 Category, gut health",
+    title:"Tests bring people in. Supplements have to pay the bills.",
+    q:"Tests bring people in. Supplements have to pay the bills.",
+    a:"Sova sells a \u20b94,000 gut test, then nothing to buy for the three weeks until the report lands. I read all 26 products, all 69 live Meta ads and both storefronts, and found the same test priced \u20b91,000 apart across two sites and not one ad selling a supplement. The plan puts one price on every test, attaches a supplement to every report, and takes the \u20b999 to \u20b9499 packs onto chemist shelves where pharma already owns 90% of a \u20b92,070 Cr category.",
+    stats:[["69 ads","live on Meta. None of them sells a supplement"],["\u20b91,000","gap on the same test across two Sova sites"],["90%","of a \u20b92,070 Cr probiotics market held by pharma"]] },
 
   { id:"hydration", brand:"Blinkit", logo:"blinkit", tone:"#FBF1CF", acc:"#4A3B00", status:"doc", featured:true, url:"", type:"Category thesis", tags:["Category","Strategy","E-com & Q-com"],
     image:"assets/work/hydration.jpg", cover:"assets/covers/hydration.jpg", kicker:"Category thesis · 6 pages",
@@ -2465,12 +2553,13 @@ const WORK = [
     docs:[{label:"Strategic diagnosis",file:"assets/docs/NYOD-Strategic-Diagnosis.pdf",kind:"PDF"},
           {label:"Weekly forecast model",file:"assets/docs/NYOD-Weekly-Forecast-Model.xlsx",kind:"XLSX"}] },
 
-  { id:"proteinpantry", brand:"Protein Pantry", logo:"proteinpantry", tone:"#EEF0E6", acc:"#7A2A10", status:"soon", featured:true, url:"", type:"Field test", tags:["Marketing","Growth"],
-    image:"assets/work/proteinpantry.jpg", kicker:"Field test · two hours on the street",
-    title:"I sold the range myself, then took what I learned back to the founders.",
-    q:"I sold the range myself, then took what I learned back to the founders.",
-    a:"Five air-fried frozen SKUs at 22g to 25g of protein, carried to a street stall and sold by hand: 8 of 10 packs in two hours for ₹2,350. I logged every objection at the point of sale, then pitched the founders a sharper ICP, a pricing read and the packaging fixes buyers asked for.",
-    stats:[["8 of 10","packs sold in two hours"],["₹2,350","taken at the stall, cash in hand"],["5 SKUs","22g to 25g protein, air fried not deep fried"]] },
+  { id:"proteinpantry", brand:"Protein Pantry", logo:"proteinpantry", tone:"#EEF0E6", acc:"#7A2A10", status:"live", featured:true,
+    url:"https://protein-pantry.netlify.app/", type:"Live study", tags:["Growth","Marketing","E-com & Q-com","Category"],
+    image:"assets/work/proteinpantry.jpg", shot:"assets/work/proteinpantry-shot.jpg", kicker:"Live study · Outside-in growth audit",
+    title:"I sold the range myself, then audited the brand from the outside in.",
+    q:"I sold the range myself, then audited the brand from the outside in.",
+    a:"I carried five frozen SKUs to a street stall and took ₹2,350 in two hours, logging every objection at the point of sale. Then I did the desk half properly: 143 shelf checks across Blinkit, Flipkart Minutes and FirstClub, 44 products benchmarked and 22 live Meta ads reviewed, and wrote the growth plan that fell out of it.",
+    stats:[["143","shelf checks across three platforms"],["44","products benchmarked on price and protein"],["22","live Meta ads reviewed for the creative read"]] },
 
   { id:"bsc", brand:"Bombay Shaving Company", logo:"bsc", tone:"#EDEBE6", acc:"#16202A", status:"soon", featured:true, url:"", type:"Growth teardown", tags:["Growth","Marketing"],
     image:"assets/work/bsc.jpg", kicker:"Growth teardown",
@@ -2490,7 +2579,7 @@ const WORK = [
     q:"A B2B growth plan from ideal customer profile to pipeline velocity.",
     a:"I defined who the product is actually for, built the outbound and partner motion around that definition, and set the metrics that show whether the pipeline is moving." },
 
-  { id:"pocketfm", brand:"Pocket FM", logo:"pocketfm", tone:"#FBE3EA", acc:"#8A1239", status:"soon", featured:true, url:"", type:"Growth plan", tags:["Growth","Product"],
+  { id:"pocketfm", brand:"Pocket FM", logo:"pocketfm", tone:"#FBE3EA", acc:"#8A1239", status:"soon", featured:true, url:"", type:"Growth plan", tags:["Growth","Marketing"],
     image:"assets/work/pocketfm.jpg", kicker:"Growth plan",
     title:"A growth plan across acquisition, the first session and the paywall.",
     q:"A growth plan across acquisition, the first session and the paywall.",
@@ -2506,23 +2595,26 @@ const CAPS = [
 ];
 
 const ROLE_GROUPS = [
-  ["Marketing",     ["brand","strat","pmm","mktg","perf"]],
-  ["Category",      ["cat","sourcing"]],
-  ["E-com & Q-com", ["ecom","kam"]],
-  ["Growth",        ["growth","ua","crm"]],
-  ["Product",       ["pm","gpm"]],
-  ["Strategy",      ["fo","cos","eir","bizops"]]
+  ["Marketing",        ["brand","strat","mktg","perf"]],
+  ["Category",         ["cat","sourcing"]],
+  ["E-com & Q-com",    ["ecom","kam"]],
+  ["Growth",           ["growth","ua","crm","gpm","pm"]],
+  ["Strategy",         ["fo","cos","eir","bizops","bd","partner"]],
+  ["Demand Gen",       ["dg","growthmkt","abm","revops","ae","b2g"]],
+  ["Product Marketing",["pmm","pmmsaas","compete","enable"]]
 ];
+
+
 const ROLEDATA = {
   brand:{ name:"Brand Manager", owns:"The brand's positioning and P&L: portfolio, pricing, campaigns and consistency at every touchpoint.",
-    fit:"I have built two brands end to end, from name and packaging to pricing and launch, and carried the numbers behind them.",
+    fit:"I built Gripply end to end, from name and packaging to pricing and launch, and carried the numbers behind it.",
     skills:["Brand positioning","360 campaign planning","Pricing and pack architecture","Consumer insights","Agency and creator management","Brand P&L"],
-    proof:["Gripply: brand, packaging and pricing from zero","Ripenseed: relaunch as a modern pantry brand","Subko: SKU architecture and price ladder"],
+    proof:["Gripply: brand, packaging and pricing from zero","Subko: SKU architecture and price ladder","Zoomies: pack and price architecture across a 45-SKU range"],
     tools:["Figma","Canva","Meta Business Suite","Google Trends","Advanced Excel"] },
   strat:{ name:"Brand Strategist", owns:"What the brand stands for, who it is for and why it wins: positioning, architecture and narrative.",
-    fit:"Ripenseed's brand DNA, customer and product line were my work, and every growth plan I write starts from the brand's positioning.",
+    fit:"Gripply's positioning, customer and product line were my work, and every growth plan I write starts from what the brand actually stands for.",
     skills:["Brand DNA and purpose","Positioning and territory","Brand architecture","Audience research and personas","Competitive mapping","Messaging frameworks"],
-    proof:["Ripenseed: brand DNA and anchor customer","Gripply: premium minimal positioning","BSC plan written in the brand's own voice"],
+    proof:["Gripply: premium minimal positioning from zero","Brewcontent: repositioned off a category nobody searches for","BSC plan written in the brand's own voice"],
     tools:["Figma","Canva","Google Trends","Semrush","Notion"] },
   pmm:{ name:"Product Marketing Manager", owns:"Positioning, messaging and launches that turn a product into a reason to buy.",
     fit:"Positioning, customer definition and launch planning from building brands from zero, plus a full GTM plan for NYOD.",
@@ -2595,15 +2687,81 @@ const ROLEDATA = {
     proof:["Weekly bid review that tripled participation across 6 entities","Receivables halved from ₹2 Cr to ₹1 Cr through a structured follow-up cadence","Order-tracking dashboard adopted across the group"],
     tools:["Advanced Excel","PowerPoint","Notion","Looker Studio","Claude Code"] },
   eir:{ name:"Entrepreneur in Residence", owns:"A new bet from blank page to first revenue: the thesis, the test, and the call on whether it lives.",
-    fit:"I have started two consumer brands with my own money and taken one to a sold-out pop-up and a ₹90 CAC. I also publish independent category studies, which is the same muscle: pick a question, go and get the data, then decide.",
+    fit:"I started Gripply with my own money and took it to a sold-out pop-up, a ₹90 CAC and 4.5x ROAS. I also publish independent category studies, which is the same muscle: pick a question, go and get the data, then decide.",
     skills:["Opportunity sizing and thesis writing","Customer discovery","MVP and pilot design","Unit economics from scratch","GTM and first-channel testing","Kill criteria"],
-    proof:["Gripply: zero to a sold-out pop-up and a Shopify store in under a year","Ripenseed: incubated at AIC Prestige, now relaunching","NYOD: GTM plan with a driver-based 52-week forecast"],
+    proof:["Gripply: zero to a sold-out pop-up and a Shopify store in under a year","Brewcontent: a sales-led GTM for a seed-stage SaaS","NYOD: GTM plan with a driver-based 52-week forecast"],
     tools:["Shopify","Meta Ads Manager","Advanced Excel","Figma","Notion"] },
   bizops:{ name:"Strategy and Business Operations", owns:"Planning, metrics and operating cadence that keep the business on its numbers.",
     fit:"I built the dashboards, review cadences and pricing models that moved win rate and cash flow at Priyabrat Industries.",
     skills:["KPI design and dashboards","Unit economics","Pricing models","Operating cadence","Supply chain","Market sizing"],
     proof:["Order-tracking dashboard: delays down 40%","L1 bid pricing model on GeM","Group revenue from ₹7 Cr to ₹12 Cr+ in one FY"],
-    tools:["Advanced Excel","SQL","Looker Studio","Power BI","Microsoft Dynamics 365"] }
+    tools:["Advanced Excel","SQL","Looker Studio","Power BI","Microsoft Dynamics 365"] },
+
+  dg:{ name:"Demand Generation Manager", owns:"The pipeline the sales team works: which channels create qualified demand, at what cost, and how fast it converts.",
+    fit:"I wrote the demand engine for Brewcontent, a seed-stage SaaS with 97% direct traffic and no inbound at all, and set CAC and payback per channel before a rupee of paid went out.",
+    skills:["Channel mix and budget allocation","ICP and segment definition","Inbound and outbound sequencing","MQL to SQL qualification","CAC, payback and pipeline coverage","Attribution and reporting"],
+    proof:["Brewcontent: demand engine built from a standing start, India first, then the US","CheQ: B2B pipeline from ICP definition to velocity","Kuku: paid acquisition rebuilt around retained payers, not installs"],
+    tools:["Google Ads","Meta Ads Manager","LinkedIn Ads","HubSpot and Zoho CRM (exposure)","Google Analytics 4","Looker Studio","Advanced Excel"] },
+
+  growthmkt:{ name:"Growth Marketing Manager, B2B", owns:"Experiments across the whole funnel, from first touch to closed revenue, and the system that decides what to try next.",
+    fit:"I run growth as a P&L question rather than a channel question, which is how I sized Brewcontent's wedge and why I would not spend on paid there until proof existed.",
+    skills:["Full-funnel experiment design","Landing page and CRO","Lifecycle and nurture","Positioning tests","Cohort and payback analysis","Budget cases"],
+    proof:["Brewcontent: sales-led, product-assisted motion with PLG held back until demand exists","Phab: a creative system that learns which argument sells","Protein Pantry: a checkout-by-checkout growth audit across four platforms"],
+    tools:["Google Analytics 4","Meta Ads Manager","Google Ads","Microsoft Clarity","Looker Studio","SQL","Advanced Excel"] },
+
+  abm:{ name:"ABM and Campaign Manager", owns:"Named-account campaigns: the list, the message per segment, and the orchestration across sales and marketing.",
+    fit:"Give-first outbound to a named list is the motion I designed for Brewcontent, and I have sat on the buying side of exactly this kind of campaign for three years.",
+    skills:["Account selection and tiering","Segment messaging","Outbound sequencing","Sales and marketing orchestration","Campaign measurement","Content and offer design"],
+    proof:["Brewcontent: give-first outbound to agencies and D2C brands, the product as the pitch","Winner, GTM teardown ODC at Hive School (MoEngage)","African Industries: three years reading vendor outreach as the buyer"],
+    tools:["HubSpot and Zoho CRM (exposure)","LinkedIn Ads","Advanced Excel","Notion","Looker Studio","Canva"] },
+
+  revops:{ name:"Revenue Operations Manager", owns:"The numbers everyone argues about: the funnel definitions, the CRM hygiene, the forecast and the reporting the whole company runs on.",
+    fit:"I rebuilt how six entities bid, priced and collected, moving win rate from 15% to 25% and halving receivables. That is revenue operations with a tender instead of a CRM.",
+    skills:["Funnel and stage definitions","Forecasting and driver models","Pipeline hygiene and reporting","Pricing and approval workflow","Receivables and cash cycle","Dashboarding"],
+    proof:["Priyabrat: win rate 15% to 25%, bid participation tripled across six entities","Priyabrat: payment liability halved from ₹2 Cr to ₹1 Cr, turnaround up 30%","NYOD: a driver-based 52-week forecast with three scenarios"],
+    tools:["Advanced Excel","SQL","Looker Studio","Microsoft Dynamics 365","SAP","HubSpot and Zoho CRM (exposure)"] },
+
+  pmmsaas:{ name:"Product Marketing Manager, B2B SaaS", owns:"Why a buyer should care: category, positioning, messaging, pricing and the launch that carries it.",
+    fit:"Brewcontent was selling a category nobody searches for. I repositioned it against the job buyers actually have, and built the proof assets the sale needs.",
+    skills:["Category and positioning","Messaging and narrative","Competitive teardowns","Pricing and packaging","Launch planning","Case studies and proof"],
+    proof:["Brewcontent: repositioned off an unsearched category, 20 design partners and 6+ case studies as the month-6 target","NYOD: GTM plan with a 52-week driver model","Winner, GTM teardown ODC at Hive School (MoEngage)"],
+    tools:["Semrush","Google Trends","Figma","Canva","Notion","Advanced Excel","HubSpot and Zoho CRM (exposure)"] },
+
+  compete:{ name:"Competitive Intelligence Manager", owns:"What the rest of the market is actually doing, and what the company should do about it.",
+    fit:"Teardowns are most of my published work: 210 tagged Meta ads, 1,485 prices across six apps, 143 shelf checks. I collect the primary data myself rather than quoting a report.",
+    skills:["Competitor teardowns","Pricing and assortment benchmarking","Ad and messaging analysis","Market sizing","Win and loss themes","Battlecards"],
+    proof:["Phab: 210 live Meta ads tagged across five brands","Sasta Kaun: 1,485 prices across six apps and ten cities","Protein Pantry: 143 shelf checks and 44 products benchmarked"],
+    tools:["Semrush","Meta Ad Library","Similarweb","Advanced Excel","SQL","Google Trends"] },
+
+  enable:{ name:"Sales Enablement Manager", owns:"What the sales team says, shows and sends, and whether any of it moves a deal forward.",
+    fit:"I have written the deck, worked the committee and lost the deal, on both sides of the table. Enablement that has never been in the room is just content.",
+    skills:["Messaging and objection handling","Deck and collateral design","Buying committee mapping","Proof and case study development","Onboarding and training","Deal review"],
+    proof:["Winner, Best Commercial Buyer at Hive School's buying committee ODC","African Industries: trained 5 graduate engineers on procurement, ERP and negotiation in 3 months","Brewcontent: proof assets scoped as the month-6 deliverable"],
+    tools:["Figma","Canva","Notion","HubSpot and Zoho CRM (exposure)","Advanced Excel"] },
+
+  bd:{ name:"Business Development Manager", owns:"New revenue that does not exist yet: the market, the first conversations, and the deals that open a channel.",
+    fit:"₹12 Cr of revenue across six entities came from bid strategy, pricing and getting the compliance right. Most of it was business that did not exist before we went after it.",
+    skills:["Market and account research","Outbound and qualification","Commercial proposals","Pricing and margin calls","Negotiation: ZOPA and BATNA","Partner and channel development"],
+    proof:["Priyabrat: ~₹12 Cr revenue across six entities, bid participation tripled","Priyabrat: 2,000+ government mandates fulfilled with minimal disputes","African Industries: 15+ new vendors developed to widen sourcing"],
+    tools:["GeM portal","HubSpot and Zoho CRM (exposure)","Advanced Excel","Microsoft Dynamics 365","LinkedIn Sales Navigator (exposure)"] },
+
+  ae:{ name:"Account Executive, SaaS", owns:"A quota, a pipeline and a set of buying committees to move from first call to signature.",
+    fit:"I have run long, committee-led sales with compliance attached and a 25% win rate, and I have been the buyer evaluating vendors on exactly those terms.",
+    skills:["Discovery and qualification","Buying committee mapping","Demo and proposal","Commercial negotiation","Forecast accuracy","Pipeline management"],
+    proof:["Priyabrat: win rate 15% to 25% on committee-led B2G deals","Winner, Best Commercial Buyer at Hive School's buying committee ODC","Brewcontent: a sales-led motion designed around design partners, not self-serve"],
+    tools:["HubSpot and Zoho CRM (exposure)","Advanced Excel","Notion","LinkedIn Sales Navigator (exposure)"] },
+
+  b2g:{ name:"Enterprise and Government Sales", owns:"Tenders, bids, compliance and the long cycle that ends in an order and, eventually, a payment.",
+    fit:"Three years of it. ₹12 Cr across six entities, bid participation tripled, 2,000+ mandates fulfilled, and the receivables chased down afterwards.",
+    skills:["Tender and bid management","Compliance documentation","Pricing and L1 benchmarking","Multi-entity bid strategy","Dispute and claim handling","Receivables and collections"],
+    proof:["Priyabrat: ~₹12 Cr revenue, win rate 15% to 25%","Priyabrat: 2,000+ government mandates with minimal disputes","African Industries: a GeM L1 price benchmarking model"],
+    tools:["GeM portal","Advanced Excel","Microsoft Dynamics 365","SAP","ERP systems"] },
+
+  partner:{ name:"Partnerships and Alliances Manager", owns:"Revenue through other people's distribution: who to partner with, on what terms, and whether it actually pays.",
+    fit:"I have built the supply side of this for three years, 50+ vendors and 15+ new ones developed, and I size a partner the way I size a channel: by contribution, not by logo.",
+    skills:["Partner sourcing and qualification","Commercial terms and margin","Joint business plans","Co-marketing","Channel contribution analysis","Relationship management"],
+    proof:["African Industries: 15+ vendors developed across six countries","Priyabrat: 50+ vendors coordinated across 12+ categories","Gripply: a hybrid owned-inventory and dropship model to hold cash risk down"],
+    tools:["Advanced Excel","Microsoft Dynamics 365","HubSpot and Zoho CRM (exposure)","Notion","Looker Studio"] }
 };
 
 const STC=[["--blue","--blue-s"],["--amber","--amber-s"],["--rose","--rose-s"],["--green","--green-s"],["--violet","--violet-s"]];
@@ -2627,7 +2785,7 @@ const FUNNEL = [
   { n:"05", t:"Referral", q:"How does one customer bring the next?", w:"60%",
     lv:["Referral loops with a real reason to share","Reviews and ratings on platforms","Creator and community programmes","Brand moments worth talking about"],
     mx:["Referral rate","K-factor","Ratings","NPS"],
-    ev:"<b>Where I have done it:</b> packaging and brand design for Ripenseed and Gripply, built to be shown off on the counter and the desk." }
+    ev:"<b>Where I have done it:</b> packaging and brand design for Gripply, built to be shown off on the desk, and a pack architecture for Zoomies built to be found on a shelf." }
 ];
 
 
@@ -2797,10 +2955,18 @@ $("#carouTrack").innerHTML=FEAT.map((c,i)=>{
 (function(){
   const track=$("#carouTrack"), cards=$$(".cs",track);
   if(!cards.length) return;
-  const prev=$("#carPrev"), next=$("#carNext");
+  const prev=$("#carPrev"), next=$("#carNext"), dots=$("#carouDots");
+  if(dots){
+    dots.innerHTML=cards.map((c,n)=>{
+      const t=c.querySelector(".cs-meta b");
+      return `<button type="button" role="tab" data-i="${n}" aria-current="${n===0}" aria-label="Go to ${t?esc(t.textContent):("study "+(n+1))}"></button>`;
+    }).join("");
+    dots.addEventListener("click",e=>{ const b=e.target.closest("button[data-i]"); if(b) goTo(+b.dataset.i); });
+  }
   const setActive=i=>{
     cards.forEach((c,n)=>c.classList.toggle("live-c",n===i));
     prev.disabled=i===0; next.disabled=i===cards.length-1;
+    if(dots) $$("button",dots).forEach((b,n)=>b.setAttribute("aria-current",n===i));
   };
   const goTo=i=>{
     i=Math.max(0,Math.min(cards.length-1,i));
@@ -2949,29 +3115,6 @@ bindLb($("#built"));
 LB.edu=$$("#studied .ed-img img").map(im=>({src:im.getAttribute("src"),title:im.alt}));
 bindLb($("#studied"));
 
-/* =========================================================
-   RIPENSEED GALLERY
-   ========================================================= */
-const RIPE_PHOTOS = {
-  spices:  { src:"assets/ripenseed/ingredient-sourcing.webp", title:"Buying by hand at the ingredient market, grading oregano, garlic and chilli before any of it gets a label" },
-  jars:    { src:"assets/ripenseed/jar-sourcing.webp",        title:"Choosing the glass: neck size, cap fit and weight, because the jar sets the floor on the shelf price" },
-  press:   { src:"assets/ripenseed/label-press.webp",         title:"On the label press, checking colour and the nutrition panel against the approved proof" },
-  labels:  { src:"assets/ripenseed/label-system.webp",        title:"The label system: five SKUs on one grid, each flavour with its own colour and botanical illustration" },
-  counter: { src:"assets/ripenseed/counter-lineup.webp",      title:"The range on a kitchen counter, which is the only place it really has to work" },
-  box:     { src:"assets/ripenseed/gift-box.webp",            title:"The five-jar box, built to lift the basket well above a single-SKU order" }
-};
-const RIPE_LAYOUT = ["spices", "jars", "press", "labels", "counter", "box"];
-(function(){
-  const grid=$("#rgalGrid"); if(!grid) return;
-  const order=Object.keys(RIPE_PHOTOS);
-  LB.ripenseed=order.map(k=>RIPE_PHOTOS[k]);
-  grid.innerHTML=RIPE_LAYOUT.map(it=>{
-    const ph=RIPE_PHOTOS[it], i=order.indexOf(it);
-    return `<button type="button" class="gi" data-lb="ripenseed" data-lb-i="${i}" aria-label="View: ${esc(ph.title)}"><img src="${ph.src}" alt="${esc(ph.title)}" loading="lazy">${ZM}<span class="gcap"><span>${esc(ph.title)}</span></span></button>`;
-  }).join("");
-  $("#rgalCnt").textContent=`${order.length} photos`;
-  bindLb(grid);
-})();
 $$(".js-link").forEach(a=>guardLink(a,a.dataset.name));
 
 /* =========================================================

@@ -7,7 +7,7 @@ No build step and no external requests: fonts, logos and images all ship inside 
 
 Hero · Why am I the right fit · Tools I work in · Brands I have pulled apart · Seeing the bigger
 picture (carousel) · Projects, teardowns and strategies (grid or list) · How I think about growth ·
-Two brands I started myself · Where I have worked · Tell me the role · Where I studied · Writing · Contact
+A brand I started myself · Where I have worked · Tell me the role · Where I studied · Writing · Contact
 
 Every section leads with its heading; the small label underneath is secondary by design.
 
@@ -15,8 +15,14 @@ Every section leads with its heading; the small label underneath is secondary by
 
 Everything editable lives in one block at the top of the `<script>`.
 
-- `PILLARS` - the six strands of work. They drive the rotating hero line, the index filters and the
-  role picker. Change them here and everything downstream follows.
+- `PILLARS` - the seven strands of work: Marketing, Category, E-com & Q-com, Growth, Strategy,
+  Demand Gen and Product Marketing. They drive the rotating hero line, the index filters and the
+  role picker. Change them here and everything downstream follows, so a new pillar needs
+  `ROLE_GROUPS` entries and at least one `WORK` item tagged with it, or its filter comes back
+  empty. There is no separate list of disciplines anywhere: the rotator is the only place they are
+  spelled out, which is deliberate. The B2B sales roles still exist in `ROLEDATA`; they live under
+  Demand Gen (Account Executive, Enterprise and Government Sales) and Strategy (Business
+  Development, Partnerships), because a pillar with one project behind it reads as a gap.
 - `WORK` - every piece of independent work. `tags` must be pillar names. `status`: `"live"` (needs
   `url`), `"doc"` (has `docs`), `"soon"` (work done, write-up not published yet, shows an amber
   pill and a footer chip and dims the card arrow), `"progress"` or `"done"`. `featured:true` puts it in the carousel.
@@ -36,8 +42,8 @@ Everything editable lives in one block at the top of the `<script>`.
 - `LOGOS` - brand marks in `assets/logos/`. `inv:true` flips a white mark to black on light tiles.
 - `TOOL_ICONS` / `TOOLS` - the stack. A tool with no icon entry falls back to a lettermark.
 - `ROLE_GROUPS` and `ROLEDATA` - the role picker, grouped by pillar. Pick a pillar, then a role.
-- `FUNNEL`, `CAPS`, `CHAPTERS`, `GRIPPLY_PHOTOS`, `LADDER` - the growth loop, the capability
-  overview, the Ripenseed chapters and the Gripply gallery.
+- `FUNNEL`, `CAPS`, `GRIPPLY_PHOTOS`, `LADDER` - the growth loop, the capability overview and the
+  Gripply gallery.
 - Work experience, the hero bubbles and the numbers strip are plain HTML in the body, not data.
 
 ## The hero
@@ -51,6 +57,20 @@ positioned with `left: min(0px, 82vw - 3.278 * var(--ah))`. The photo is 5160x94
 at 59.8% of its width, so `3.278 = 0.598 x 5.483`; the `min(0px, …)` keeps the desk spanning the
 full viewport on wide screens. Phones use a smaller `--ah` and `58vw`, and the whole hero still
 fits one screen (822px tall at 390x844).
+
+## The headline
+
+The `<h1>` is three `.ln` spans, each one line: "I drive", the rotator, "for scaling businesses."
+The breaks are hand-set rather than left to wrapping, because at this size an organic wrap leaves
+a two-word orphan. If you change the wording, check all three breakpoints (1440, 1100, 390) and
+keep every line to one line; `.hero3-main` is capped at `min(560px, 46vw)` so the rotator's
+longest word is what sets the ceiling. Each line has its own transition delay, so a fourth line
+needs a fourth `nth-child` rule.
+
+The lede under it is capped at `min(100%, 40ch)` and the ROAS bubble moves to the right edge
+between 861px and 1120px. Both exist for the same reason: the bubbles are positioned as a
+percentage of the hero, so on a short window they ride up into the text. If you widen the lede or
+move a bubble, re-check a 700px-tall viewport, which is where it breaks first.
 
 ## Dark mode
 
@@ -69,10 +89,15 @@ in the carousel stay a light window in both themes, the way a real browser does.
 ## Project order
 
 `WORK` order drives both the carousel and the grid. It is hand-ordered, strongest first:
-District, Phab, Sasta Kaun, Snitch, Kuku, Wakefit, then the rest. Reordering the array reorders
-both views; nothing else needs touching.
+District, Phab, Sasta Kaun, Snitch, Kuku, Wakefit, Brewcontent, Zoomies, Wondergifts, Sova, then
+the rest. Reordering the array reorders both views; nothing else needs touching.
 
 ## The carousel
+
+The card is about 500px tall so one fits a laptop screen without scrolling; the compaction rules
+live in the "CAROUSEL: one card, one screen" block and only apply above 861px. Under the track is
+a dot strip, one dash per project, built from the cards themselves, so it needs no maintenance
+when a project is added. Arrows still work and the active dash widens.
 
 Every project appears in it. What shows in the frame depends on what the project is: a browser
 window with a real screenshot of the live page for a web study, a document window with the PDF's
@@ -91,8 +116,8 @@ changes.
 
 ## Galleries
 
-Gripply and Ripenseed both render one flat grid, three columns on desktop, with every tile locked
-to 4:3 so the rows stay flush. Gripply interleaves three info tiles (brand line, pop-up stats,
+Gripply renders one flat grid, three columns on desktop, with every tile locked
+to 4:3 so the rows stay flush. It interleaves three info tiles (brand line, pop-up stats,
 price ladder) among the photos; they share the same aspect, so their content is sized to fit
 rather than the grid flexing around them. One portrait photo, the launch poster, is listed in
 `GRIPPLY_WIDE` and takes a two-row cell so it is not cropped; the layout order is arranged so the
@@ -106,17 +131,21 @@ link: it opens `url` in a new tab, or shows a "link coming soon" toast when `url
 ## Adding a project screenshot
 
 Open the live study at about 1180px wide, screenshot the first screen, save it as
-`assets/work/<id>.jpg`, then set both `image` and `shot` on the `WORK` entry.
+`assets/work/<id>-shot.jpg` at 1280x682, and set `shot` on the `WORK` entry (`image` is the
+separate grid thumbnail). This container cannot reach Netlify, so the capture has to come through
+a browser on the Mac. The built-in browser pane returns its screenshots at the pane's own size
+rather than the emulated viewport, so a shot taken that way is scaled up to 1280x682; the
+carousel frame renders it about 400px wide, so the upscale does not show.
 District, Phab and Sasta Kaun already have theirs.
 
 ## Still to add
 
-- Live URLs for the five projects still marked "Write-up coming soon".
+- Live URLs for the four projects still marked "Write-up coming soon" (Bombay Shaving Company,
+  Emami Agrotech, CheQ, Pocket FM).
 - **A clean Bombay Shaving Company logo.** The current `assets/logos/bsc.png` is cropped in the
   source file, so "COMPANY" is cut off wherever it appears. Replace the file and it fixes itself.
 - Wakefit logo in `assets/logos/`, then add it to `LOGOS`.
 - Shakti Transformers dates in the experience section.
-- Thumbnails for Wakefit and Protein Pantry. They fall back to a tinted logo tile until then.
 - Sixteen tools have no public vector logo (GeM, Dynamics 365, Clarity, Flipkart Seller Hub, the
   q-commerce seller portals, CleverTap, MoEngage, WebEngage, Klaviyo, AppsFlyer, Ahrefs, Sprout
   Social, Shiprocket, Unicommerce, Google Trends, Merchant Center). They use brand-coloured
@@ -135,5 +164,4 @@ District, Phab and Sasta Kaun already have theirs.
 - `assets/logos/linkedin.png`, `assets/logos/gmail.png` - the nav and contact icon buttons.
 - `assets/docs/` - the downloadable PDFs and the NYOD Excel model.
 - `assets/covers/` - first-page renders of each PDF, used as the carousel preview.
-- `assets/ripenseed/` - the Ripenseed relaunch photos.
 - `assets/tools/` - tool marks for the stack.
